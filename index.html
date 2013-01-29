@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>ImageFlip 0.1</title>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+        <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    </head>
+    <body>
+        <script type="text/javascript" src="https://raw.github.com/dArignac/imageflip/master/mootools-release-1.11.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/dArignac/imageflip/master/imageflip-0.1.js"></script>
+        <script type="text/javascript" src="loader.js"></script>
+
+        <div class="navigation">
+            <a href="#" id="previous"><img src="arrow_left.png" alt="previous" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="next"><img src="arrow_right.png" alt="next" /></a>
+        </div>
+
+        <div class="info">Images copyright by their respective owners.<br/>Images taken from the <a href="http://zoebell.com/forums/index.php/topic,2.0.html">zoebell.com forums</a>.</div>
+
+        <div id="holder">
+            <a name="demo"></a>
+            <div id="morph0" class="d0"></div>
+            <div id="morph1" class="d1"></div>
+            <div id="morph2" class="d2"></div>
+            <div id="morph3" class="d3"></div>
+            <div id="morph4" class="d4"></div>
+        </div>
+
+        <div class="content">
+            <h3>
+                ImageFlip 0.1
+            </h3>
+
+            <p>
+                ImageFlip ist a small javascript using the <a href="http://www.mootools.net">mootools framework</a>.<br />
+                I came up with the idea to have a gallery that looks like the effect in windows vista - so I created this one.<br />
+            </p>
+
+            <div id="accordion">
+                <h3 class="toggler atStart">&raquo; Download</h3>
+                <div class="element atStart">
+                    <ul>
+                        <li>
+                            <a href="imageflip-0.1.zip">ImageFlip 0.1</a> (2007-12-20)
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="toggler atStart">&raquo; Features</h3>
+                <div class="element atStart">
+                    <ul>
+                        <li>use for as much images as you like</li>
+                        <li>place the images whereever you want - use your divs and css styles</li>
+                        <li>nice startup effect</li>
+                        <li>also a nice morphing effect when scrolling through the images, fades out first/last and fades in last/first</li>
+                        <li>preloading on start and dynamically while scrolling</li>
+                        <li>while preloading a layer is put over the overall size of your divs with preloading information</li>
+                        <li>
+                            <strong>
+                                tested with FF 2 and IE6, IE 7, Opera 9.02, Safari 3.0.4 and Netscape 7<br />
+                                smoothness depends on image count and size and your pc configuration!
+                            </strong>
+                        </li>
+                    </ul>
+                    <p>
+                        I created this little script in my freetime - it's open source, use it wherever you like and feel free to adjust.<br />
+                        Would be nice if you place a link to my blog <a href="http://www.zoe.vc">zoe.vc</a> (you can use <a href="http://www.zoe.vc/button0.png">this button</a>) - but I don't require.<br />
+                        The script is <strong><em>still in development</em></strong> - there are some smaller known bugs and I'd like to make it more customizable - so stay tuned!<br />
+                        <strong>
+                            If you have any issues, feel free to mail to dev <em>at</em> zoe <em>dot</em> vc with a punchy email subject :-)
+                        </strong>
+                    </p>
+                </div>
+
+                <h3 class="toggler atStart">&raquo; Usage</h3>
+                <div class="element atStart">
+                    <ol>
+                        <li>
+                            Download the <a href="imageflip-0.1.zip">lastest ImageFlip zip file</a> and place the files into the same directory as you html is.<br />
+                            (contains a optimized mootools js, you can also download a custom one from the <a href="http://www.mootools.net/download">mootools site</a>)
+                        </li>
+                        <li>
+                            Add the scripts to your page:<br /><br />
+                            <code>
+                                &lt;script type="text/javascript" src="mootools-req-1.11.js"&gt;&lt;/script&gt;<br />
+                                &lt;script type="text/javascript" src="imageflip-0.1.js"&gt;&lt;/script&gt;
+                            </code>
+                            <br /><br />
+                        </li>
+                        <li>
+                            Add a javascript block or create a new js file and link. I've chosen a seperate file named <em>loader.js</em>:<br /><br />
+                            <code>
+                                &lt;script type="text/javascript" src="loader.js"&gt;&lt;/script&gt;
+                            </code>
+                            <br /><br />
+                        </li>
+                        <li>
+                            Add the domready event:<br /><br />
+                            <code>
+                                window.addEvent('domready', function() {<br />
+                                <br />
+                                }
+                            </code>
+                            <br /><br />
+                        </li>
+                        <li>
+                            Create divs for the images and assign css classes. Also create elements for navigation.<br />
+                            e.g.<br />
+                            <code>
+                                &lt;a href="#" id="previous"&gt;previous&lt;/a&gt; &lt;a href="#" id="next"&gt;next&lt;/a&gt;<br />
+                                &lt;div id="morph0" class="d0">&lt;/div&gt;<br />
+                                &lt;div id="morph1" class="d1">&lt;/div&gt;<br />
+                                &lt;div id="morph2" class="d2">&lt;/div&gt;<br />
+                                &lt;div id="morph3" class="d3">&lt;/div&gt;<br />
+                                &lt;div id="morph4" class="d4">&lt;/div&gt;<br />
+                            </code>
+                            <br /><br />
+                        </li>
+                        <li>
+                            Initialize the ImageFlip class in your external js or your javascript code in html:<br /><br />
+                            <code>
+                                var flipper = new ImageFlip(<br />
+                                &emsp;array_of_div_ids,<br />
+                                &emsp;array_of_div_stylesheet_classes,<br />
+                                &emsp;array_with_button_ids,<br />
+                                &emsp;array_with_image_paths,<br />
+                                &emsp;array_with_properties);
+                            </code>
+                            <br /><br />
+                            <ol>
+                                <li>
+                                    Array of div ids where the images should be placed in, sorted.<br />
+                                    e.g. <code>new Array('morph0', 'morph1', 'morph2', 'morph3', 'morph4')</code>
+                                    <br /><br />
+                                </li>
+                                <li>
+                                    Array of stylesheet classes of the divs for the images, sorted, same array length as first array.<br />
+                                    e.g. <code>new Array('d0', 'd1', 'd2', 'd3', 'd4')</code>
+                                    <br /><br />
+                                </li>
+                                <li>
+                                    Array of ids of the elements that will be used as buttons. first for previous, second index for next button.<br />
+                                    e.g. <code>new Array('next', 'previous')</code>
+                                    <br /><br />
+                                </li>
+                                <li>
+                                    Array with pathes to the images used. At least as much images as displayed divs.<br />
+                                    e.g. <code>new Array('img/pic0.jpg', 'img/pic1.jpg', 'img/pic2.jpg', 'img/pic3.jpg', 'img/pic4.jpg')</code>
+                                    <br /><br />
+                                </li>
+                                <li>
+                                    Array with some properties.<br />
+                                    index: 'zIndex': number of the z-Index the divs with the images start.<br />
+                                    index: 'loadingText': text to be displayed while preloading at startup, the markers '#IMG#' for currently loaded image and '#SIZE#' for image count should be in.<br />
+                                    e.g.<br />
+                                    <code>
+                                        var properties = new Array();<br />
+                                        properties['zIndex'] = 1;<br />
+                                        properties['loadingText'] = 'Loading image #IMG# of #SIZE#...';
+                                    </code>
+                                    <br /><br />
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3 class="toggler atStart">&raquo; Demo</h3>
+                <div class="element atStart">
+                    <p>
+                        Go to the <a href="#demo">top of the page</a>.<br />
+                        Clear your browsers cache and reload to see the preloading - used images are bigger than necessary to demonstrate.
+                    </p>
+                </div>
+
+                <h3 class="toggler atStart">&raquo; Donate</h3>
+                <div class="element atStart">
+                    <p>
+                        If you like and use the script, feel free to donate some cent, thanks in advance!<br />
+                    </p>
+
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <p>
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="image" src="https://www.paypal.com/de_DE/i/btn/x-click-but04.gif" name="submit" alt="Zahlen Sie mit PayPal - schnell, kostenlos und sicher!" />
+                            <img alt="" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1" />
+                            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
