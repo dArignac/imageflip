@@ -6,7 +6,7 @@ window.addEvent('domready', function() {
     // images
     var images = new Array();
     for (var i = 0; i < 32; i++) {
-        images.push('images/zoe' + i + '.jpg');
+        images.push('https://s3-eu-west-1.amazonaws.com/thela/imageflip/zoe' + i + '.jpg');
     }
     var flipper = new ImageFlip(
         new Array('morph0', 'morph1', 'morph2', 'morph3', 'morph4'),
